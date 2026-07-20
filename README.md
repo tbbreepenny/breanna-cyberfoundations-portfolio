@@ -2,7 +2,7 @@
 
 ABOUT ME 
 My name is Breanna Pennywell I am from Tampa Bay. 
-I am interested in transitioning to cybersecurityand thought this would be a great foundation. 
+I am interested in transitioning to cybersecurity and thought this would be a great foundation. 
 I am hoping that this would give me the foundational skills needed to start my career.
 
 **New here? Read [START-HERE.md](START-HERE.md) first — it walks you through your very first commit, step by step.**
