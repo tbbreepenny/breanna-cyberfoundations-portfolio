@@ -1,7 +1,9 @@
 # Week 2 Lab — Cybersecurity Landscape & Digital Infrastructure Overview
 
-**Student Name:**  
-**Date Completed:**  
+**Student Name:** Breanna Pennywell
+
+**Date Completed:** 07/26/2026
+
 **Module:** 1 — Digital Infrastructure & CLI | **Week:** 2  
 **Submission Path:** `week-02/labs/lab-01-hardware-os-software-diagram.md`
 
@@ -24,6 +26,8 @@ In this lab, you build a working mental model of the system you'll be securing t
 
 **Prerequisite:** Portfolio repo created from the CyberFoundations student template in Week 1. This file is already in your repo at `week-02/labs/lab-01-hardware-os-software-diagram.md`, ready to fill in.
 
+**New to the Lab Portal?** Watch this short walkthrough of how to find your Week 2 lab worksheet: [Accessing the Lab Worksheet — Step by Step](PASTE-VIDEO-LINK-HERE) *(~3 min)*.
+
 ---
 
 ## Part A — CyberFoundations City & the Cybersecurity Landscape
@@ -43,13 +47,15 @@ Work through the orientation content. It covers the same hardware/OS/software ma
 Open the CyberFoundations City map (introduced in Week 1, Lesson 6). Identify which district corresponds to Module 1 — Digital Infrastructure & CLI.
 
 **District name:**
+
 ```
-(enter the district name)
+Foundry District
 ```
 
 **Why this district fits this week's topics (1–2 sentences):**
+
 ```
-(your explanation)
+I think it fits because we will be going over digital infrastructure and command line foundations. The district itself represents hardware, and operating systems.
 ```
 
 ---
@@ -62,43 +68,53 @@ A computer is a stack of layers: physical hardware at the bottom, an operating s
 
 Before drawing anything, list the three layers you'll diagram and one example of what lives at each layer.
 
-**Hardware layer — one example component:**
+**Hardware layer — one example component:** CPU
+
 ```
 (e.g., CPU, RAM, storage — your choice)
 ```
 
-**Operating system layer — name an OS:**
+**Operating system layer — name an OS:** Linux
+
 ```
 (e.g., Windows, Linux, macOS)
 ```
 
-**Software layer — one example application:**
+**Software layer — one example application:** Chrome
+
 ```
 (e.g., a web browser, a word processor)
 ```
 
 ### Step 2 — Sketch Your Diagram
 
-Sketch a simple diagram (hand-drawn and photographed, or built in any digital tool) showing how the hardware, OS, and software layers stack and interact. Arrows or labels showing "what talks to what" matter more than visual polish.
+Sketch a simple diagram (hand-drawn and photographed, or built in any digital tool) showing how the hardware, OS, and software layers stack and interact. Arrows or labels showing "what talks to what" matter more than visual polish. If you'd like a free browser-based option instead of hand-drawing, try [draw.io](https://www.drawio.com/) — no account required to get started.
 
-### Step 3 — Save and Embed Your Diagram
+### Step 3 — Upload and Embed Your Diagram
 
-Save your diagram as an image file in `assets/screenshots/week-02/` in your portfolio repo. Embed it below using a relative path — not an absolute path from your computer. See the CVI GitHub Handbook if you need a refresher on relative paths.
+Upload your diagram image directly into your repo's assets folder — keep it there rather than pasting it loose into this file, so all of this week's images stay together and organized.
+
+1. Go to your portfolio repository on GitHub.com and navigate to `assets/screenshots/week-02/`.
+2. Click **Add file → Upload files**, then drag in your diagram image, and give it a descriptive name (lowercase, hyphens, no spaces, no timestamps — e.g. `hardware-os-software-diagram.png`).
+3. Scroll down and click **Commit changes**.
+4. Click on the uploaded image's filename to open it — you'll see the image itself displayed on the page.
+5. Right-click directly on the image and choose **Copy image address** (Chrome/Edge) or **Copy Image Link** (Firefox).
+6. Come back to this file, open the pencil (edit) icon, and paste that link into the embed line below, in place of the placeholder:
 
 ```markdown
-![Hardware/OS/software diagram](../../assets/screenshots/week-02/diagram.png)
+![Hardware/OS/software diagram](paste your copied image link here)
 ```
 
-**My Diagram:**
+**If right-click doesn't show that option:** click the small download-arrow icon in the top-right of the image preview instead, then copy the URL from your browser's address bar.
 
-*(embed your diagram here)*
+**My Diagram:** https://github.com/tbbreepenny/breanna-cyberfoundations-portfolio/blob/main/assets/screenshots/week-02/hardware-os-software-diagram.png?raw=true
 
 ### Step 4 — Explain Your Diagram
 
 In your own words — not a copied definition — explain how the three layers interact. Reference your own diagram directly.
 
 ```
-(your explanation — minimum 3 sentences)
+If this was like a puppet show the CPU would be the puppet, the physical thing that cannot decide on its own and does what it is told to do. The operating system would be the puppeteer telling it what to do. Telling the puppet when to move, pulling the strings. The software doesnt touch the puppet at all, its communicating with the puppeteer and the puppeteer does what it says.
 ```
 
 ---
@@ -112,7 +128,7 @@ Answer each question in your own words. These questions connect what you did in 
 If the operating system crashed on the computer you diagrammed, which layer(s) would stop working, and which (if any) would keep working? Explain your reasoning.
 
 ```
-(your answer here — minimum 3 sentences)
+If Linux crashed, both the hardware and software layers would effectively stop working. The CPU would still physically exist and could still execute raw instructions, but without Linux managing memory, scheduling and device access, nothing could happen. Chrome would freeze and crash immediately, since it depends entirely on Linux to handle its requests for memory, file access and network connections.
 ```
 
 ### Analysis Question 2
@@ -120,7 +136,7 @@ If the operating system crashed on the computer you diagrammed, which layer(s) w
 Pick one piece of software you use daily. Trace it down through the OS to the hardware it ultimately depends on. What would happen to that software if the hardware layer failed?
 
 ```
-(your answer here — minimum 3 sentences)
+I use Chrome daily, and its dependency chain runs straight down through the layers: Chrome sends requests to Linux (like "open a network socket" or "read this file"), Linux translates those requests into low-level instructions, and the CPU carries them out by moving data and running calculations. If the hardware layer failed, Chrome would stop working completely, along with everything else on the computer, because there'd be no physical component left to execute any instructions at all. This shows that software isn't really independent; it's borrowing capability from the OS and hardware every time it runs.
 ```
 
 ### Analysis Question 3
@@ -128,7 +144,7 @@ Pick one piece of software you use daily. Trace it down through the OS to the ha
 Explain, in your own words, why a cybersecurity professional needs to understand all three layers — hardware, OS, and software — rather than just the software layer where most visible attacks (like phishing emails) happen.
 
 ```
-(your answer here — minimum 4 sentences)
+A cybersecurity professional who only understands the software layer would miss huge categories of real-world attacks. Vulnerabilities and exploits can live at any layer. Malicious firmware or hardware backdoors target the hardware layer, privilege escalation and kernel exploits target the OS layer, and phishing or malware target the software layer. Someone who can only reason about the software layer would fail to recognize how an attacker might compromise a system below the application, for example by exploiting the OS to gain control of everything running on top of it. Understanding all three layers means understanding the full attack surface, not just the part that's most visible to end users. This full-stack awareness is what separates a security professional from someone who can only respond to obvious, surface-level threats.
 ```
 
 ---
@@ -138,29 +154,39 @@ Explain, in your own words, why a cybersecurity professional needs to understand
 Answer each question in complete sentences.
 
 **1. What is the cybersecurity landscape, and why does it matter to someone starting this course?**
+
 ```
-(your answer here)
+The cybersecurity landscape refers to the full range of systems, threats, technologies, and practices that make up the field — everything from physical hardware and networks to software, data, and the people who use them, along with the attackers who try to exploit weaknesses at any of those points. It matters to someone starting this course because cybersecurity isn't one narrow skill; it's a broad discipline that touches nearly every layer of modern technology, and understanding that landscape early helps a student see where their interests and strengths might fit, whether that's networking, systems administration, incident response, or policy. It also sets realistic expectations: security isn't just "stopping hackers" in the movie sense, it's an ongoing, multi-layered effort across hardware, operating systems, software, and human behavior.
 ```
 
 **2. Which CyberFoundations City district did you identify in Part A, and how does its theme connect to the hardware/OS/software material in Part B?**
+
 ```
-(your answer here)
+I identified the Foundry District, whose theme is building infrastructure fundamentals. This connects directly to the three-layer material in Part B, since hardware, the operating system, and software are themselves the foundational infrastructure that every other district in the city ultimately depends on.
 ```
 
 **3. Of the three layers (hardware, OS, software), which one do you think is hardest to secure, and why?**
+
 ```
-(your answer here)
+OS because it sits in the middle and has to mediate between hardware and every piece of software running on the machine, which makes it a high-value target with a huge attack surface.
 ```
 
 ---
 
 ## Submission Checklist
 
-- [ ] Lab Portal Module 1 orientation completed
-- [ ] District identified and explained
-- [ ] Hardware, OS, and software layer examples listed
-- [ ] Diagram embedded using a relative path (not an absolute path from your computer)
-- [ ] Diagram explanation written in your own words (minimum 3 sentences)
-- [ ] All three Analysis Questions answered (minimum sentence counts met)
-- [ ] All three Lab Report Questions answered in complete sentences
-- [ ] This file is committed to your portfolio repo at `week-02/labs/lab-01-hardware-os-software-diagram.md`
+- [x] Lab Portal Module 1 orientation completed
+
+- [x] District identified and explained
+
+- [x] Hardware, OS, and software layer examples listed
+
+- [x] Diagram uploaded to `assets/screenshots/week-02/` and embedded using a copied image link (not pasted loose, not a local file path)
+
+- [x] Diagram explanation written in your own words (minimum 3 sentences)
+
+- [x] All three Analysis Questions answered (minimum sentence counts met)
+
+- [x] All three Lab Report Questions answered in complete sentences
+
+- [x] This file is committed to your portfolio repo at `week-02/labs/lab-01-hardware-os-software-diagram.md`
