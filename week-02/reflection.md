@@ -1,20 +1,43 @@
 # Week 2 Reflection
 
----
+**Student Name:**
+
+**Date Completed:**
 
 ## Prompts
 
-1. What clicked for you this week?
-2. What's still confusing?
-3. How does this week's material connect to a cybersecurity career path you're interested in?
-4. One thing you'd tell a friend just starting this course
+**What clicked for you this week?**
+
+```
+(your answer here)
+```
+
+**What's still confusing?**
+
+```
+(your answer here)
+```
+
+**How does this week's material connect to a cybersecurity career path you're interested in?**
+
+```
+(your answer here)
+```
+
+**One thing you'd tell a friend just starting this course:**
+
+```
+(your answer here)
+```
 
 ---
 
 ## Professional Growth Check
 
 - [ ] I documented my reflection clearly and in my own words
+
 - [ ] I used structured formatting in my submission
+
 - [ ] My commit message was meaningful and descriptive
 
 ---
