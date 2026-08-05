@@ -152,7 +152,7 @@ Take a screenshot of Task Manager or Activity Monitor showing your CPU/memory us
 In your own words, explain how the real numbers you found in Part A (OS version, RAM, storage) relate to what you just watched live in Part B. Which number describes hardware, and which describes the OS?
 
 ```
-(your answer here — minimum 2 sentences)
+In Part A I found out my Mac has 8 GB of RAM, 500 GB of total storage, and it's running macOS Monterey. The 8 GB of RAM and the 500 GB of storage are both hardware numbers. They're actual physical parts of the machine. RAM is a chip that holds whatever the computer is actively working on, and storage is the drive that holds everything permanently, even when the Mac is off. macOS Monterey is different though, that's the OS. It's not something physical you could point to inside the computer, it's the software running on top of the hardware that manages it and reports back info about it.
 ```
 
 ---
@@ -164,7 +164,9 @@ In your own words, explain how the real numbers you found in Part A (OS version,
 Pick one process from your list in Part B, Step 6. Is it "software" in the sense Lab 01 used that word? Explain how it depends on the OS and on hardware to actually run.
 
 ```
-(your answer here — minimum 3 sentences)
+The process I picked is Google Chrome. Yes, it counts as software in the way Lab 01 used the word, since it's an application I installed and use, not something that's part of the physical computer or built into the operating system itself. It showed up in Activity Monitor with 44 threads and 0.6% CPU, which is a good example of software running as an actual live process, not just an icon sitting on my desktop.
+
+Chrome depends on the OS to actually run because it can't talk to the hardware on its own. Every time Chrome loads a webpage, plays a video, or opens a new tab, it has to send a request to macOS, and macOS is the one that actually grants it memory, network access, or CPU time. That's part of why Activity Monitor can even show me stats like CPU time and threads for Chrome in the first place, the OS is the one tracking and managing all of that on Chrome's behalf.
 ```
 
 ### Analysis Question 2
@@ -172,7 +174,7 @@ Pick one process from your list in Part B, Step 6. Is it "software" in the sense
 Your CPU usage number changes constantly, even when you're not doing anything. Explain, in your own words, why watching this number matters for security work — not just for performance. (Hint: think about what it might mean if a process you don't recognize suddenly spikes CPU usage.)
 
 ```
-(your answer here — minimum 3 sentences)
+Watching CPU usage isn't just about making sure my Mac runs smoothly, it's a way of noticing when something is behaving differently than expected. In cybersecurity, a lot of detection comes down to spotting things that don't match the normal pattern, and CPU spikes from unfamiliar processes are one of the simplest, most visible signs that something might be wrong.
 ```
 
 ### Analysis Question 3
@@ -180,30 +182,33 @@ Your CPU usage number changes constantly, even when you're not doing anything. E
 Compare what you saw in Task Manager/Activity Monitor to the diagram you built in Lab 01. What's the same? What did watching your machine live show you that a static diagram couldn't?
 
 ```
-(your answer here — minimum 3 sentences)
+My diagram had CPU as hardware, macOS Monterey as the OS, and Chrome as an example of software, and Activity Monitor showed that exact same structure in action. Every process listed, like Chrome, Zoom, or Messages, is software running on top of the OS, and the CPU percentages next to each one are literally showing hardware being used in real time. My diagram made it look like there's one clean line from software to OS to hardware, but Activity Monitor showed dozens of processes all competing for the same CPU at the same time, including a lot of background processes I didn't even know existed, like coreaudiod or transparencyd.
+
+What watching it live showed me that the diagram couldn't is just how much is actually happening at once, and how constant it all is.
+The diagram taught me the structure, but Activity Monitor showed me the structure is alive and constantly working, which is something a static image just can't capture.
 ```
 
 ---
 
 ## Submission Checklist
 
-- [ ] OS version, installed RAM, and total/free storage looked up and recorded (Part A)
+- [x] OS version, installed RAM, and total/free storage looked up and recorded (Part A)
 
-- [ ] Task Manager or Activity Monitor opened and list sorted before recording (Part B)
+- [x] Task Manager or Activity Monitor opened and list sorted before recording (Part B)
 
-- [ ] Current CPU usage recorded
+- [x] Current CPU usage recorded
 
-- [ ] Current RAM usage recorded, alongside total RAM from Part A
+- [x] Current RAM usage recorded, alongside total RAM from Part A
 
-- [ ] Five running processes listed, each with a reasoned guess at what it does
+- [x] Five running processes listed, each with a reasoned guess at what it does
 
-- [ ] Screenshot uploaded to `assets/screenshots/week-02/` and embedded using a copied image link
+- [x] Screenshot uploaded to `assets/screenshots/week-02/` and embedded using a copied image link
 
-- [ ] Connection explanation written (Part B, Step 8 — minimum 2 sentences)
+- [x] Connection explanation written (Part B, Step 8 — minimum 2 sentences)
 
-- [ ] All three Analysis Questions answered (minimum sentence counts met)
+- [x] All three Analysis Questions answered (minimum sentence counts met)
 
-- [ ] This file is committed to your portfolio repo at `week-02/labs/lab-02-machine-exploration.md`
+- [x] This file is committed to your portfolio repo at `week-02/labs/lab-02-machine-exploration.md`
 
 ---
 
