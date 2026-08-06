@@ -46,13 +46,13 @@ Work through the orientation content. It covers the same hardware/OS/software ma
 
 Open the CyberFoundations City map (introduced in Week 1, Lesson 6). Identify which district corresponds to Module 1 — Digital Infrastructure & CLI.
 
-**District name:**
+**District name:** Foundry District
 
 ```
 Foundry District
 ```
 
-**Why this district fits this week's topics (1–2 sentences):**
+**Why this district fits this week's topics (1–2 sentences):** I think it fits because we will be going over digital infrastructure and command line foundations. The district itself represents hardware, and operating systems.
 
 ```
 I think it fits because we will be going over digital infrastructure and command line foundations. The district itself represents hardware, and operating systems.
