@@ -46,7 +46,7 @@ Open your computer's system settings (Windows: **Settings → System → About**
 
 On the same settings screen, find how much RAM (memory) is installed on your computer.
 
-**Installed RAM:**
+**Installed RAM:** 8 GB
 
 ```
 8 GB
@@ -56,13 +56,13 @@ On the same settings screen, find how much RAM (memory) is installed on your com
 
 Find your computer's total storage capacity and how much is currently free (Windows: **Settings → System → Storage**. Mac: **About This Mac → Storage**).
 
-**Total storage:**
+**Total storage:** 500 GB
 
 ```
 500 GB
 ```
 
-**Free storage:**
+**Free storage:** 384.26
 
 ```
 384.26
