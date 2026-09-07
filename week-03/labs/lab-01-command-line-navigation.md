@@ -220,23 +220,23 @@ The "labeled cabinets" are the folder structure (intake, logs, maintenance), and
 
 ## Submission Checklist
 
-- [ ] Starting location recorded using `pwd`/`Get-Location` (Part A, Step 1)
+- [x] Starting location recorded using `pwd`/`Get-Location` (Part A, Step 1)
 
-- [ ] Folder contents listed using `ls`/`dir` (Part A, Step 2)
+- [x] Folder contents listed using `ls`/`dir` (Part A, Step 2)
 
-- [ ] Prediction written down before moving (Part A, Step 3)
+- [x] Prediction written down before moving (Part A, Step 3)
 
-- [ ] Moved into a folder using `cd` and confirmed the new location with `pwd`/`Get-Location` **immediately after** the move, not just at the end (Part B, Steps 1–2)
+- [x] Moved into a folder using `cd` and confirmed the new location with `pwd`/`Get-Location` **immediately after** the move, not just at the end (Part B, Steps 1–2)
 
-- [ ] Found and read a text file using `cat`/`type` (Part B, Steps 3–4)
+- [x] Found and read a text file using `cat`/`type` (Part B, Steps 3–4)
 
-- [ ] Moved back up using `cd ..` and confirmed with `pwd`/`Get-Location` (Part B, Step 5)
+- [x] Moved back up using `cd ..` and confirmed with `pwd`/`Get-Location` (Part B, Step 5)
 
-- [ ] Looked up an unfamiliar command using `--help`, `man`, or `Get-Help` and recorded what it does (Part C)
+- [x] Looked up an unfamiliar command using `--help`, `man`, or `Get-Help` and recorded what it does (Part C)
 
-- [ ] All four Analysis Questions answered (minimum sentence counts met)
+- [x] All four Analysis Questions answered (minimum sentence counts met)
 
-- [ ] This file is committed to your portfolio repo at `week-03/labs/lab-01-command-line-navigation.md`
+- [x] This file is committed to your portfolio repo at `week-03/labs/lab-01-command-line-navigation.md`
 
 ---
 
