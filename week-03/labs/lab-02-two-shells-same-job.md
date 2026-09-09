@@ -341,25 +341,25 @@ One difference from Lesson 2 that showed up directly in this lab was slash style
 
 ## Submission Checklist
 
-- [ ] Part A completed entirely in bash (Steps A1–A6, all commands and output recorded)
+- [x] Part A completed entirely in bash (Steps A1–A6, all commands and output recorded)
 
-- [ ] Location re-checked immediately after the Part A move (Step A3), not just at the end
+- [x] Location re-checked immediately after the Part A move (Step A3), not just at the end
 
-- [ ] Investigation note created and backed up in Part A (Steps A5–A6)
+- [x] Investigation note created and backed up in Part A (Steps A5–A6)
 
-- [ ] Part B completed entirely in PowerShell, on the same folder/file as Part A (Steps B1–B6)
+- [x] Part B completed entirely in PowerShell, on the same folder/file as Part A (Steps B1–B6)
 
-- [ ] Location re-checked immediately after the Part B move (Step B3)
+- [x] Location re-checked immediately after the Part B move (Step B3)
 
-- [ ] Investigation note created and backed up in Part B, with the same filenames as Part A (Steps B5–B6)
+- [x] Investigation note created and backed up in Part B, with the same filenames as Part A (Steps B5–B6)
 
-- [ ] Comparison table filled in with actual commands, not placeholders (Part C, Step C1)
+- [x] Comparison table filled in with actual commands, not placeholders (Part C, Step C1)
 
-- [ ] Output-differences reflection written (Part C, Step C2 — minimum 2 sentences)
+- [x] Output-differences reflection written (Part C, Step C2 — minimum 2 sentences)
 
-- [ ] All three Analysis Questions answered (minimum sentence counts met)
+- [x] All three Analysis Questions answered (minimum sentence counts met)
 
-- [ ] This file is committed to your portfolio repo at `week-03/labs/lab-02-two-shells-same-job.md`
+- [x] This file is committed to your portfolio repo at `week-03/labs/lab-02-two-shells-same-job.md`
 
 ---
 
