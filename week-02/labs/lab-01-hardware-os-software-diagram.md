@@ -2,7 +2,7 @@
 
 **Student Name:** Breanna Pennywell
 
-**Date Completed:** 07/26/2026
+**Date Completed:** 09/24/2026
 
 **Module:** 1 — Digital Infrastructure & CLI | **Week:** 2  
 **Submission Path:** `week-02/labs/lab-01-hardware-os-software-diagram.md`
@@ -100,10 +100,6 @@ Upload your diagram image directly into your repo's assets folder — keep it th
 4. Click on the uploaded image's filename to open it — you'll see the image itself displayed on the page.
 5. Right-click directly on the image and choose **Copy image address** (Chrome/Edge) or **Copy Image Link** (Firefox).
 6. Come back to this file, open the pencil (edit) icon, and paste that link into the embed line below, in place of the placeholder:
-
-```markdown
-![Hardware/OS/software diagram](paste your copied image link here)
-```
 
 **If right-click doesn't show that option:** click the small download-arrow icon in the top-right of the image preview instead, then copy the URL from your browser's address bar.
 
