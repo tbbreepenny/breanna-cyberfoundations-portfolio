@@ -2,7 +2,7 @@
 
 **Student Name:** BREANNA PENNYWELL
 
-**Date Completed:** 08/25/2026
+**Date Completed:** 10/01/2026
 
 **Module:** 1 — Digital Infrastructure & CLI | **Week:** 3  
 **Submission Path:** `week-03/labs/lab-01-command-line-navigation.md`
@@ -11,7 +11,7 @@
 
 ## Overview
 
-Lesson 3 introduced your first five commands — finding where you are, looking around, moving through folders, peeking inside a file, and asking for help — in both bash and PowerShell. This lab has you apply those same five commands to a brand-new scenario inside the CLI Simulator, on your own, then connect what you find back to the file-system tree you learned to read in Lessons 1 and 2.
+Lesson 3 introduced your first five commands — finding where you are, looking around, moving through folders, peeking inside a file, and asking for help — in both bash and PowerShell. This lab has you apply those same five commands to a brand-new practice area inside the CLI Simulator, on your own, then connect what you find back to the file-system tree you learned to read in Lessons 1 and 2.
 
 **Nothing here can break anything real.** The CLI Simulator is a consequence-free practice space — if you type something wrong, the worst outcome is an error message telling you so.
 
@@ -25,15 +25,32 @@ Lesson 3 introduced your first five commands — finding where you are, looking 
 | Shell | Your choice — bash or PowerShell. Try the same steps in both if you want extra practice; only one is required |
 | Prerequisite | Lessons 1, 2, and 3 completed |
 
-**Before you start:** log into the Lab Portal, open **Week 3 → CLI Simulator**, and load the **"Foundry District Shift Log"** scenario. This gives you a fresh, seeded set of folders and files you haven't seen before — that's intentional, so you're navigating for real, not just repeating the lesson's example.
+**Before you start:** here is how to open this lab's practice area.
+
+1. Sign in to the Lab Portal and open **CLI Simulator** (in the top menu, or the **Open the CLI Simulator** link on the Week 3 page).
+2. Scroll down to the heading **Week 3 Labs**.
+3. Pick **one** box: **Foundry District Shift Log — Bash** or **Foundry District Shift Log — PowerShell**. Each box is its own terminal. There is no separate shell switch — the box you pick decides the shell.
+4. Click inside the terminal and type your commands there.
+
+**How the challenges work.**
+
+- The box shows **Challenge 1 of 6**, **Challenge 2 of 6**, and so on. Each worksheet step below tells you which challenge it matches.
+- Read the challenge goal, type commands until it is met, then press **Next** (or press Enter on an empty line). Use **Previous** any time to look back at an earlier challenge.
+- **Each challenge loads its own prepared files and its own starting folder.** The terminal still shows your earlier commands, but your location and files reset to that challenge's setup. This is normal — it is not lost work.
+- **Good habit:** at the start of every new challenge, run `pwd` (bash) or `Get-Location` (PowerShell), then `ls` (bash) or `dir` (PowerShell), so you know where you are and what is there.
+- **Restart challenge** gives you fresh files for the current challenge. It does **not** remove challenges you already completed and saved.
+- Only commands that run without an error count toward a challenge. If you see an error, read it and try again.
+- The simulator saves your challenge progress. Your worksheet answers are separate — save them on this worksheet page.
+
+**Command reference:** at the top of the CLI Simulator page, click **Command reference** to open it. You can search by command name or by task (for example "list" or "help") and filter to **Bash** or **PowerShell**. Its examples use sample file names that may not exist in your challenge — always check with `ls`/`dir` first.
 
 ---
 
 ## Part A — Find Your Way
 
-### Step 1 — Open the Scenario and Check Your Starting Point
+### Step 1 — Check Your Starting Point
 
-Load the Foundry District Shift Log scenario and run the command that tells you where you currently are (`pwd` in bash, `Get-Location` in PowerShell).
+**Matches Challenge 1.** Run the command that tells you where you currently are (`pwd` in bash, `Get-Location` in PowerShell).
 
 Command you ran:
 
@@ -49,7 +66,7 @@ Output (your current path):
 
 ### Step 2 — Look Around
 
-Run the command that lists what's in your current location (`ls` in bash, `dir` in PowerShell).
+**Matches Challenge 2.** Run the command that lists what's in your current location (`ls` in bash, `dir` or `Get-ChildItem` in PowerShell).
 
 Command you ran:
 
@@ -65,7 +82,7 @@ README.md  intake  logs  maintenance
 
 ### Step 3 — Predict Before You Move
 
-Before moving anywhere, look at the folder names from Step 2 and guess which one might contain a shift log or notes file. Write your guess down first — you'll check it in Part B.
+**Do this before you press Next into Challenge 3.** Look at the folder names from Step 2 and guess which one might contain a shift log or notes file. Write your guess down first — you'll check it in Part B.
 
 My guess:
 
@@ -79,7 +96,7 @@ logs
 
 ### Step 1 — Move Into a Folder
 
-Use `cd` (with a folder name from Step 2 as its argument) to move into the folder you guessed in Part A, Step 3.
+**Matches Challenge 3 (first half).** Challenge 3 starts in your home folder. Use `cd` (bash) or `cd`/`Set-Location` (PowerShell) with a folder name from Part A, Step 2 to move into the folder you guessed.
 
 Command you ran:
 
@@ -89,40 +106,46 @@ cd logs
 
 ### Step 2 — Confirm Your New Location
 
-Run `pwd` or `Get-Location` again to confirm exactly where you landed.
+**Matches Challenge 3 (second half).** Right after moving, run `pwd` or `Get-Location` to confirm exactly where you landed. Challenge 3 is complete only when you move **and then** check.
 
 Command you ran:
 
 ```
-/home/morgan/logs
+pwd
 ```
 
 Output (your new path):
 
 ```
-morgan@foundry-wks-02:/home/morgan/logs$
-
+/home/morgan/logs
 ```
 
 ### Step 3 — Look Around Again
 
-Run `ls` or `dir` again in this new location. Keep moving with `cd` (repeating Steps 1–3 as needed) until you find a text file — something like a shift log, notes file, or README.
+**Matches Challenge 4 (searching).** Challenge 4 starts fresh in your home folder again — not in the folder from Challenge 3. Run `pwd`/`Get-Location` to check, then use `cd` and `ls`/`dir` to look inside the folders until you find the file that logs today's activity.
 
 Command you ran:
 
 ```
+pwd
+ls
+cd logs
+pwd
 ls
 ```
 
 Output:
 
 ```
+/home/morgan
+README.md  intake  logs  maintenance
+/home/morgan/logs
 shift-log.txt
 ```
 
 ### Step 4 — Peek Inside the File
 
-Once you've found a text file, use `cat` (bash) or `type` (PowerShell) to read its contents.
+**Matches Challenge 4 (reading).** Once you've found the log file, use `cat` (bash) or `type`/`Get-Content` (PowerShell) to read its contents. Was your guess from Part A, Step 3 right?
 
 Command you ran:
 
@@ -141,18 +164,18 @@ Shift Log - Foundry District
 
 ### Step 5 — Move Back Up
 
-Use `cd ..` at least once to move back up a level, and confirm with `pwd`/`Get-Location` that the path changed the way you expected.
+**Matches Challenge 5.** Challenge 5 starts you inside a folder below home (run `pwd`/`Get-Location` to see where). Your goal is to return to your home folder, `/home/morgan`. Use `cd ..` (in bash, plain `cd` also works), then confirm with `pwd`/`Get-Location` that you are in `/home/morgan`.
 
 Command you ran:
 
 ```
-cd
+cd ..
 ```
 
 Output (confirming your new — higher — location):
 
 ```
-morgan@foundry-wks-02:/home/morgan$
+/home/morgan$
 
 ```
 
@@ -162,11 +185,11 @@ morgan@foundry-wks-02:/home/morgan$
 
 ### Step 1 — Pick an Unfamiliar Command
 
-The CLI Simulator's Foundry District scenario includes one command you haven't been taught yet, shown as a hint in the scenario panel. Instead of guessing what it does, ask the terminal directly.
+**Matches Challenge 6.** The challenge names one command you haven't been taught yet: `grep` in the bash box, or `Get-Acl` in the PowerShell box. Instead of guessing what it does, ask the terminal directly.
 
 ### Step 2 — Run the Help Command
 
-Use `--help` or `man` (bash) or `Get-Help` (PowerShell) on that unfamiliar command.
+In bash, use `grep --help` (or `man grep`). In PowerShell, use `Get-Help Get-Acl`. Read the output, then describe it in your own words.
 
 Command you ran:
 
@@ -177,7 +200,7 @@ grep --help
 What the help text told you the command does, in your own words:
 
 ```
-grep PATTERN FILE... - search for PATTERN in each FILE.
+search for patterns in each file
 ```
 
 ---
@@ -186,7 +209,7 @@ grep PATTERN FILE... - search for PATTERN in each FILE.
 
 ### Analysis Question 1
 
-Look at the path `pwd` (or `Get-Location`) printed in Part A, Step 1. Is it written in Windows style or Linux style, and how do you know? Reference at least one specific detail from Lesson 2 (a drive letter, a slash direction, or the presence of a ~) to support your answer.
+Look at the path `pwd` (or `Get-Location`) printed in Part A, Step 1. In this simulator, both the bash and PowerShell boxes use Linux-style paths. Explain what makes this path Linux-style, and describe what a Windows-style path would look like instead. Reference at least one specific detail from Lesson 2 (a drive letter, a slash direction, or the presence of a ~) to support your answer.
 
 ```
 Linux style, I know this because it uses forward slashes (/) to separate directories, whereas Windows paths use backslashes (\).
@@ -250,6 +273,8 @@ This lab's written answers are submitted the same way as Week 2's: through the *
 4. Connect your GitHub account if you haven't already (one-time setup), and select your portfolio repo.
 5. Click **Submit to GitHub**. The Portal commits the completed file to `week-03/labs/lab-01-command-line-navigation.md` for you — no manual typing or commit needed for this part.
 
+**Three different things — do all that apply:** finishing the simulator challenges saves your challenge progress; **Submit to GitHub** on this worksheet sends your written answers to your repo; logging the lab in the separate lab tracker is its own step (see the Week 3 Submissions Guide).
+
 **📌 Optional — add a screenshot for your portfolio.** This entire step is optional. Skipping it will **not** affect your grade — it's a nice-to-have addition to your portfolio, not a requirement. Only do this if you'd like a visual record of your CLI Simulator session.
 
 If you'd like to add one, take a screenshot showing your commands and their output, then:
@@ -260,6 +285,8 @@ If you'd like to add one, take a screenshot showing your commands and their outp
 4. Click on the uploaded image's filename to open it — you'll see the image itself displayed on the page.
 5. Right-click directly on the image and choose **Copy image address** (Chrome/Edge) or **Copy Image Link** (Firefox).
 6. Come back to this file, open the pencil (edit) icon, and add the embed near the bottom of Part B, pasting your copied link in place of the placeholder:
+
+![CLI Simulator session screenshot](https://raw.githubusercontent.com/tbbreepenny/breanna-cyberfoundations-portfolio/refs/heads/main/assets/screenshots/week-03/cli-simulator-session.png)
 
 **If right-click doesn't show that option** (e.g., on some trackpads or tablets): click the small download-arrow icon in the top-right of the image preview instead, then copy the URL from your browser's address bar.
 
