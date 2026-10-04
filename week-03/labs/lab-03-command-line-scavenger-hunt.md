@@ -1,8 +1,8 @@
 # Week 3 Lab 03 — Command Line Scavenger Hunt (CLI Simulator)
 
-**Student Name:** BREANNA PENNYWELL
+**Student Name:** Breanna Pennywell
 
-**Date Completed:** 09/08/2026
+**Date Completed:** 10/04/2026
 
 **Module:** 1 — Digital Infrastructure & CLI | **Week:** 3  
 **Submission Path:** `week-03/labs/lab-03-command-line-scavenger-hunt.md`
@@ -25,7 +25,30 @@ Labs 01 and 02 walked you through each command step by step. This lab is Week 3'
 | Shell | Your choice — bash or PowerShell |
 | Prerequisite | Labs 01 and 02 completed |
 
-**Before you start:** log into the Lab Portal, open **Week 3 → CLI Simulator**, and load the **"Foundry District Archive Room"** scenario. This tree goes several folders deeper than Labs 01 and 02, and includes a few similarly-named folders on purpose — read carefully before you `cd` into anything.
+**Before you start:** here is how to open this lab's practice area.
+
+1. Sign in to the Lab Portal and open **CLI Simulator** (in the top menu, or the **Open the CLI Simulator** link on the Week 3 page).
+2. Scroll down to the heading **Week 3 Labs**.
+3. Pick **one** box: **Foundry District Archive Room — Bash** or **Foundry District Archive Room — PowerShell**. Each box is its own terminal; the box decides the shell.
+
+This tree goes several folders deeper than Labs 01 and 02, and includes a few similarly-named folders on purpose — read carefully before you `cd` into anything.
+
+**How the 8 challenges match this worksheet.**
+
+| Challenge | What you do | Worksheet part |
+|---|---|---|
+| 1 | Find and read the shift log file | Parts A and B |
+| 2 | Find and read the maintenance note file | Parts A and B |
+| 3 | Find and read the supply inventory file | Parts A and B |
+| 4 | Create the `sorted-findings` folder in your home folder | Part C, Step 1 |
+| 5 | Move the shift log into `sorted-findings` | Part C, Step 2 |
+| 6 | Move the maintenance note into `sorted-findings` | Part C, Step 2 |
+| 7 | Move the supply inventory into `sorted-findings`, then list the folder | Part C, Steps 2–3 |
+| 8 | Look up an unfamiliar command (`chmod` in bash, `Get-Acl` in PowerShell) | Part D, Step 1 |
+
+**This is not one long terminal session.** Each challenge loads its own prepared files and starts in your home folder, `/home/archivist`. The terminal still shows your earlier commands, but your location and files reset to that challenge's setup — that is normal, not lost work. At the start of each challenge, run `pwd`/`Get-Location` and `ls`/`dir`. Press **Next** (or Enter on an empty line) after each goal is met, and use **Previous** to review. **Restart challenge** gives fresh files and keeps challenges you already saved. Your worksheet answers are saved separately on this page.
+
+**Command reference:** at the top of the CLI Simulator page, click **Command reference**, then search (for example "move" or "folder") and filter to **Bash** or **PowerShell**. Its examples use sample names that may not exist in your challenge.
 
 ---
 
@@ -37,12 +60,12 @@ Find all three of the following, hidden at different depths in the Archive Room 
 - A file related to a **maintenance note**
 - A file related to a **supply inventory**
 
-For each one, use `pwd`/`Get-Location` and `ls`/`dir` as many times as you need while you search, then record the **full path** once you find it.
+**Challenges 1–3** — one file per challenge, each starting fresh in `/home/archivist`. For each one, use `pwd`/`Get-Location` and `ls`/`dir` as many times as you need while you search, then record the **full path** once you find it.
 
 Shift log file — full path once found:
 
 ```
-	/home/archivist/operations/ops-log/shift-log.txt
+/home/archivist/operations/ops-log/shift-log.txt
 ```
 
 Maintenance note file — full path once found:
@@ -54,20 +77,18 @@ Maintenance note file — full path once found:
 Supply inventory file — full path once found:
 
 ```
-/home/archivist/records/records-2024/supply-inventory.txt
+/home/archivist/records/records-2024/supply-inventory-txt
 ```
 
 ---
 
 ## Part B — Read and Report
 
-For each of the three files you found in Part A, use `cat`/`type` to read it and record what it says.
+Reading each file is what completes Challenges 1, 2, and 3. For each of the three files you found in Part A, use `cat` (bash) or `type`/`Get-Content` (PowerShell) to read it and record what it says.
 
 Shift log contents:
 
 ```
-PS /home/archivist> cd /home/archivist/operations/ops-log
-PS /home/archivist/operations/ops-log> cat shift-log.txt
 Shift Log - Foundry District Archive Room
 07:00 - Archive opened, no incidents overnight.
 15:00 - Routine filing complete.
@@ -76,16 +97,12 @@ Shift Log - Foundry District Archive Room
 Maintenance note contents:
 
 ```
-PS /home/archivist/operations/ops-log> cd /home/archivist/records/records-2025
-PS /home/archivist/records/records-2025> cat maintenance-note.txt
 Maintenance Note - Conveyor belt 3 serviced, next check due in 90 days.
 ```
 
 Supply inventory contents:
 
 ```
-PS /home/archivist/records/records-2025> cd /home/archivist/records/records-2024
-PS /home/archivist/records/records-2024> cat supply-inventory.txt
 Supply Inventory - Q4 2024
 Gloves - 400 units
 Masks - 250 units
@@ -100,45 +117,42 @@ Now that you've located and read all three files, clean up after yourself the wa
 
 ### Step 1 — Create a Sorted-Findings Folder
 
-Create a new folder called `sorted-findings` in your home directory.
+**Challenge 4.** Create a new folder called `sorted-findings` in your home directory, `/home/archivist` (bash: `mkdir sorted-findings`; PowerShell: `New-Item sorted-findings -ItemType Directory`). It must be a real folder — an empty file with that name does not count.
 
 Command you ran:
 
 ```
-mkdir /home/archivist/sorted-findings
+Mkdir sorted-findings
 ```
 
 ### Step 2 — Move All Three Files Into It
 
-Move the shift log, maintenance note, and supply inventory files — the same three you found in Part A — into `sorted-findings`.
+**Challenges 5, 6, and 7** — one move per challenge. Move the shift log, maintenance note, and supply inventory files — the same three you found in Part A — into `sorted-findings`, using `mv` (bash) or `Move-Item` (PowerShell). A copy does not count: the file must end up in `sorted-findings` **and** be gone from its old folder, with its contents unchanged.
+
+Each move challenge is freshly prepared from your home folder. Challenge 5 already has an empty `sorted-findings` folder. Challenge 6 already has the shift log in it. Challenge 7 already has the shift log and maintenance note in it — you move the third file, and all three must be there, intact. If you moved around, return home first with `cd ~`.
 
 Commands you ran:
 
 ```
-mv /home/archivist/operations/ops-log/shift-log.txt /home/archivist/sorted-findings/
-mv /home/archivist/records/records-2025/maintenance-note.txt /home/archivist/sorted-findings/
-mv /home/archivist/records/records-2024/supply-inventory.txt /home/archivist/sorted-findings/
+mv operations/ops-log/shift-log.txt sorted-findings/
+mv records/records-2025/maintenance-note.txt sorted-findings/
+mv records/records-2024/supply-inventory.txt sorted-findings/
 ```
 
 ### Step 3 — Confirm the Move
 
-List the contents of `sorted-findings` to confirm all three files are now there.
+**Challenge 7 (last part).** In the same challenge as your last move, list the contents of `sorted-findings` (`ls sorted-findings` or `Get-ChildItem sorted-findings`) to confirm all three files are now there.
 
 Command you ran:
 
 ```
-cd /home/archivist/sorted-findings
-ls
+Ls sorted-findings
 ```
 
 Output:
 
 ```
-PS /home/archivist/sorted-findings> ls
-Mode                 Name
--a----               maintenance-note.txt
--a----               shift-log.txt
--a----               supply-inventory.txt
+maintenance-note.txt  shift-log.txt  supply-inventory.txt
 ```
 
 ---
@@ -149,18 +163,18 @@ At some point in the Archive Room, you'll likely run across a command or folder 
 
 ### Step 1 — Ask the Terminal
 
-When that happens, use `--help`, `man`, or `Get-Help` instead of guessing. Record what you looked up and what you learned.
+When that happens, use `--help`, `man`, or `Get-Help` instead of guessing. **Challenge 8** asks you to look up one specific command (`chmod --help` in bash, `Get-Help Get-Acl` in PowerShell) — you can record that one, or anything else you looked up while exploring. Record what you looked up and what you learned.
 
 Command or term you looked up:
 
 ```
-Get-Help mkdir
+Chmod —help
 ```
 
 What the help text (or the folder's contents) told you:
 
 ```
-So I tried mkdir --help first, thinking it'd work like it does in bash, but instead I got this weird error: New-Item : missing -Path. Turns out mkdir in PowerShell isn't really its own command — it's just a shortcut for New-Item, and --help isn't a thing PowerShell understands, so it tried to treat --help as a real argument and freaked out because it was missing the -Path part it needed. Once I ran Get-Help mkdir instead, it made way more sense: the actual syntax is New-Item -Path <path>, with some optional extras like -ItemType to say whether you want a file or folder, and -Value if you want to stick some text in it right away.
+chmod MODE FILE... - change file mode bits (e.g. chmod 755 file).
 ```
 
 ### Step 2 — Describe a Wrong Turn
@@ -168,7 +182,7 @@ So I tried mkdir --help first, thinking it'd work like it does in bash, but inst
 Everyone takes at least one wrong turn in a tree this size. Describe one moment you ended up somewhere unexpected, and how you used `pwd`/`Get-Location` and `cd ..` to recover.
 
 ```
-While I was hunting for the supply inventory file, I tried cd records-2025 straight from /home/archivist, but got smacked with bash: cd: records-2025: No such file or directory — twice, because I just assumed it'd be sitting right there in my home folder. I ran ls again to double check what was actually around me, realized records-2025 was tucked one level deeper inside records, and just did cd records first, confirmed with pwd, then cd records-2025 from there — no more errors after that.
+While I was hunting for the supply inventory file, I tried cd records-2025 straight from /home/archivist, but got smacked with bash: cd: records-2025: No such file or directory — twice, because I just assumed it'd be sitting right there in my home folder. I ran ls again to double check what was actually around me, realized records-2025 was tucked one level deeper inside records, and just did cd records first, confirmed with pwd, then cd records-2025 from there and no more errors after that.
 ```
 
 ---
