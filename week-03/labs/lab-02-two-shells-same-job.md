@@ -1,8 +1,8 @@
 # Week 3 Lab 02 — Two Shells, Same Job: Incident Response Edition (CLI Simulator)
 
-**Student Name:** BREANNA PENNYWELL
+**Student Name:** Breanna Pennywell
 
-**Date Completed:** 09/06/2026
+**Date Completed:** 10/04/2026
 
 **Module:** 1 — Digital Infrastructure & CLI | **Week:** 3  
 **Submission Path:** `week-03/labs/lab-02-two-shells-same-job.md`
@@ -11,7 +11,7 @@
 
 ## Overview
 
-Welcome to your first Incident Response (IR) assignment in the **Foundry District Storeroom**. Our network monitoring system has flagged a potential unauthorized file access attempt on our storage systems, and you've been asked to investigate from two angles: first by connecting to a remote Linux database server (Pass A, in bash), then by sitting down at a Windows admin workstation examining that exact same shared storage (Pass B, in PowerShell). Your goal is to confirm the files look the same from both operating systems and that the directory tree matches — the same translation skill from Lesson 2, now applied to a real-feeling scenario instead of just a comparison slide. You'll also log your own findings along the way, using the create-and-organize commands from Lesson 3C — a real investigator never just looks and remembers, they document.
+Welcome to your first Incident Response (IR) assignment in the **Foundry District Storeroom**. A potential unauthorized file access attempt has been flagged in the storeroom files, and you've been asked to investigate it twice, using two command syntaxes: first with bash commands (Pass A), then with PowerShell commands (Pass B). Both passes use an equivalent simulated practice dataset with the same Linux-style folders and files — it is practice data inside the simulator, not a real remote server or a real Windows computer. Your goal is to do the same job with both command styles and compare what you typed and what you saw — the same translation skill from Lesson 2, now applied to a real-feeling scenario instead of just a comparison slide. You'll also log your own findings along the way, using the create-and-organize commands from Lesson 3C — a real investigator never just looks and remembers, they document.
 
 **Nothing here can break anything real.** Same consequence-free CLI Simulator as Lab 01.
 
@@ -25,7 +25,23 @@ Welcome to your first Incident Response (IR) assignment in the **Foundry Distric
 | Shells | Both bash **and** PowerShell are required — that's the whole point of this lab |
 | Prerequisite | Lab 01 completed |
 
-**Before you start:** log into the Lab Portal, open **Week 3 → CLI Simulator**, and load the **"Foundry District Storeroom"** scenario.
+**Before you start:** here is how to open this lab's practice area.
+
+1. Sign in to the Lab Portal and open **CLI Simulator** (in the top menu, or the **Open the CLI Simulator** link on the Week 3 page).
+2. Scroll down to the heading **Week 3 Labs**.
+3. For Part A use the box **Foundry District Storeroom — Bash**. For Part B use the box **Foundry District Storeroom — PowerShell**. Each box is its own terminal. There is no separate shell switch — the box decides the shell.
+4. Each box has 6 challenges. Worksheet step A1 matches bash Challenge 1, A2 matches Challenge 2, and so on to A6. Steps B1–B6 match PowerShell Challenges 1–6 the same way.
+
+**How the challenges work.**
+
+- Meet the challenge goal, then press **Next** (or Enter on an empty line). Use **Previous** to look back.
+- **Each challenge loads its own prepared files and its own starting folder.** The terminal still shows your earlier commands, but your location and files reset to that challenge's setup. This is normal — it is not lost work.
+- **Good habit:** at the start of every new challenge, run `pwd`/`Get-Location`, then `ls`/`dir`.
+- The bash box and the PowerShell box each have their own copy of the practice files. Files you create in the bash box do not appear in the PowerShell box — you create them again in Part B.
+- **Restart challenge** gives fresh files for the current challenge and keeps any challenges you already saved.
+- Your worksheet answers are separate from simulator progress — save them on this worksheet page.
+
+**Command reference:** at the top of the CLI Simulator page, click **Command reference**, then search (for example "copy") and filter to **Bash** or **PowerShell**. Its examples use sample names that may not exist in your challenge.
 
 ---
 
@@ -33,7 +49,7 @@ Welcome to your first Incident Response (IR) assignment in the **Foundry Distric
 
 Before you start typing, remember these three professional efficiency "cheat codes":
 
-- **Tab Completion (the autocomplete magic):** you don't need to type out long folder names — type the first few letters (e.g., `cd rep`) and press **Tab**. The shell will instantly autocomplete the folder name, in both bash and PowerShell.
+- **Tab Completion (the autocomplete helper):** type the first few letters of a file or folder name (e.g., `cd arc`) and press **Tab**. If only one name starts with those letters, the simulator fills in the rest, in both boxes. If several names match, it fills in only the part they share (or nothing) — type a few more letters and press Tab again. Tab does not fully work with names that contain spaces; for those, type the full name inside quotes, like `cd "my folder"`.
 - **Up Arrow (the recaller):** if you make a typo, don't retype the whole command — press the **Up Arrow** to recall your last command, use the left/right arrows to fix the typo, and hit **Enter**.
 - **PowerShell aliases:** if typing `Get-Location` or `Get-ChildItem` feels too long, PowerShell lets you use `pwd` as a shortcut for location, and `ls` or `dir` for listing files.
 
@@ -41,23 +57,23 @@ Before you start typing, remember these three professional efficiency "cheat cod
 
 ## 🛠️ Lab Checklist
 
-- [ ] Part A: Complete the Bash Pass (Linux), including creating and backing up your investigation note
+- [x] Part A: Complete the Bash Pass (bash commands), including creating and backing up your investigation note
 
-- [ ] Part B: Complete the PowerShell Pass (Windows), including creating and backing up your investigation note
+- [x] Part B: Complete the PowerShell Pass (PowerShell commands), including creating and backing up your investigation note
 
-- [ ] Part C: Side-by-Side Comparison & Reflection
+- [x] Part C: Side-by-Side Comparison & Reflection
 
 - [ ] Analysis Questions: Final Conceptual Review
 
 ---
 
-## Part A — The Bash Pass (Linux Remote Server)
+## Part A — The Bash Pass
 
-Connect to the **remote Linux terminal** in the CLI Simulator and execute the following investigative steps. Record your commands and output exactly as they appear.
+Use the **Foundry District Storeroom — Bash** box. Every challenge starts from a prepared setup, so check your location at the start of each one. Record your commands and output exactly as they appear.
 
 ### Step A1 — Verify Your Starting Location
 
-Run the command to print your current working directory.
+**Bash Challenge 1.** Run the command to print your current working directory. You should start in `/home/agent`.
 
 Command you ran:
 
@@ -68,13 +84,12 @@ pwd
 Output:
 
 ```
-agent@storeroom-lnx01:/home/agent$ pwd
 /home/agent
 ```
 
 ### Step A2 — Look Around the Directory
 
-List the contents of your current location to spot any files or folders.
+**Bash Challenge 2.** List the contents of your current location to spot any files or folders. You should see an `archive` folder and a `README.txt` file.
 
 Command you ran:
 
@@ -85,19 +100,17 @@ ls
 Output:
 
 ```
-agent@storeroom-lnx01:/home/agent$ ls
-README.txt  archive
-
+README.txt archive
 ```
 
 ### Step A3 — Move Deeper into the Storeroom
 
-Choose a folder from the list and use the change directory command to move inside it.
+**Bash Challenge 3.** This challenge starts in `/home/agent`. Move into the flagged incident folder, `/home/agent/archive/incident-42`. From `/home/agent` you can type `cd archive/incident-42`.
 
 Command you ran:
 
 ```
-agent@storeroom-lnx01:/home/agent$ cd archive/incident-42
+Cd archive/incident-42
 ```
 
 **⚠️ Stop and check:** run your location-check command *immediately* after moving, to confirm you arrived safely.
@@ -105,24 +118,23 @@ agent@storeroom-lnx01:/home/agent$ cd archive/incident-42
 Command you ran:
 
 ```
-agent@storeroom-lnx01:/home/agent/archive/incident-42$ pwd
-
+pwd
 ```
 
 Output:
 
 ```
-/home/agent/archive/incident-42
+Home/agent/archive/incident-42
 ```
 
 ### Step A4 — Inspect the Incident Log File
 
-Find a text file in this directory and print its contents to the screen to peek inside.
+**Bash Challenge 4.** This challenge starts inside `/home/agent/archive/incident-42`. The incident log is `access-log.txt`. Print its contents to the screen with `cat`.
 
 Command you ran:
 
 ```
-agent@storeroom-lnx01:/home/agent/archive/incident-42$ cat access-log.txt
+Cat access-log.txt
 ```
 
 Output:
@@ -136,42 +148,39 @@ Access Log - Incident 42
 
 ### Step A5 — Create Your Investigation Note
 
-Investigators document as they go. Create a new, empty file right here called `investigation-notes.txt` to hold your findings.
+**Bash Challenge 5.** This challenge starts inside `/home/agent/archive/incident-42`. Investigators document as they go. Create a new, empty file right here called `investigation-notes.txt` to hold your findings.
 
 Command you ran:
 
 ```
-touch investigation-notes.txt
+Touch investigation-notes.txt
 ```
 
 ### Step A6 — Back Up Your Note
 
-Before you go any further, make a backup copy of `investigation-notes.txt` called `investigation-notes-backup.txt`, in case anything happens to your original.
+**Bash Challenge 6.** This challenge starts inside `/home/agent/archive/incident-42`, and `investigation-notes.txt` is already prepared there for you. Make a backup copy called `investigation-notes-backup.txt` with `cp` (copy, not move), then run `ls` in the same challenge to see both files.
 
 Command you ran:
 
 ```
-agent@storeroom-lnx01:/home/agent/archive/incident-42$ cp investigation-notes.txt investigation-notes-backup.txt
+cp investigation-notes.txt investigation-notes-backup.txt
 ```
 
 Confirm both files now exist:
 
 ```
-agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
 access-log.txt  investigation-notes-backup.txt  investigation-notes.txt
-PS /home/agent/archive/incident-42>
-
 ```
 
 ---
 
-## Part B — The PowerShell Pass (Windows Admin Workstation)
+## Part B — The PowerShell Pass
 
-Now switch your simulator tab to **PowerShell**. You are examining the same shared storage room from a Windows administrative workstation. **You must target the exact same folder and file you used in Part A.**
+Now use the **Foundry District Storeroom — PowerShell** box. It has its own equivalent copy of the same practice files, with the same Linux-style paths. **Target the same folder and file as Part A:** `/home/agent/archive/incident-42` and `access-log.txt`. The notes files you made in Part A are not in this box — you will create them again here.
 
 ### Step B1 — Verify Your Starting Location
 
-Run the Windows command to print your current location.
+**PowerShell Challenge 1.** Run the PowerShell command to print your current location (`Get-Location`). You should start in `/home/agent`.
 
 Command you ran:
 
@@ -182,12 +191,12 @@ Get-Location
 Output:
 
 ```
-/home/agent
+Home/agent
 ```
 
 ### Step B2 — Look Around the Directory
 
-List the contents of your current location.
+**PowerShell Challenge 2.** List the contents of your current location (`Get-ChildItem` or `dir`).
 
 Command you ran:
 
@@ -198,16 +207,14 @@ Get-ChildItem
 Output:
 
 ```
-PS /home/agent> Get-ChildItem
 Mode                 Name
 d-----               archive
 -a----               README.txt
-PS /home/agent>
 ```
 
 ### Step B3 — Move Deeper into the Storeroom
 
-Move into the **exact same folder** you chose in Part A.
+**PowerShell Challenge 3.** This challenge starts in `/home/agent`. Move into the **same folder** as Part A, `/home/agent/archive/incident-42` — for example `Set-Location archive/incident-42`.
 
 Command you ran:
 
@@ -226,14 +233,12 @@ Get-Location
 Output:
 
 ```
-PS /home/agent> Set-Location archive/incident-42
-PS /home/agent/archive/incident-42> Get-Location
 /home/agent/archive/incident-42
 ```
 
 ### Step B4 — Inspect the Incident Log File
 
-Print the contents of the **exact same text file** you read in Part A.
+**PowerShell Challenge 4.** This challenge starts inside `/home/agent/archive/incident-42`. Print the contents of the same file you read in Part A, `access-log.txt`, with `Get-Content` (or `type`).
 
 Command you ran:
 
@@ -244,7 +249,6 @@ Get-Content access-log.txt
 Output:
 
 ```
-PS /home/agent/archive/incident-42> Get-Content access-log.txt
 Access Log - Incident 42
 03:14 - Unknown login attempt, storeroom bay 3.
 03:16 - Access denied.
@@ -253,7 +257,7 @@ Access Log - Incident 42
 
 ### Step B5 — Create Your Investigation Note
 
-Create the **same-named** empty file, `investigation-notes.txt`, right here on the Windows side.
+**PowerShell Challenge 5.** This challenge starts inside `/home/agent/archive/incident-42`. Create the **same-named** empty file, `investigation-notes.txt`, right here with `New-Item`.
 
 Command you ran:
 
@@ -263,7 +267,7 @@ New-Item investigation-notes.txt
 
 ### Step B6 — Back Up Your Note
 
-Make a backup copy of `investigation-notes.txt` called `investigation-notes-backup.txt`, same as you did in Part A.
+**PowerShell Challenge 6.** `investigation-notes.txt` is already prepared in `/home/agent/archive/incident-42`. Make a backup copy called `investigation-notes-backup.txt` with `Copy-Item`, same as you did in Part A, then run `dir` in the same challenge to see both files.
 
 Command you ran:
 
@@ -274,13 +278,10 @@ Copy-Item investigation-notes.txt investigation-notes-backup.txt
 Confirm both files now exist:
 
 ```
-PS /home/agent/archive/incident-42> ls
 Mode                 Name
 -a----               access-log.txt
 -a----               investigation-notes-backup.txt
 -a----               investigation-notes.txt
-PS /home/agent/archive/incident-42>
-
 ```
 
 ---
@@ -291,22 +292,22 @@ PS /home/agent/archive/incident-42>
 
 Fill in the exact commands you typed for each task. Do not use generic names — list what you actually executed.
 
-| Task / Question | Bash Command (Linux Pass) | PowerShell Command (Windows Pass) |
+| Task / Question | Bash Command (Bash Pass) | PowerShell Command (PowerShell Pass) |
 | --- | --- | --- |
-| 1. Where am I? | pwd | 	Get-Location |
-| 2. Look around | ls | Get-ChildItem |
-| 3. Move into a folder | cd archive/incident-42 | Set-Location archive/incident-42, then Get-Location. |
-| 4. Peek inside a file | cat access-log.txt | Get-Content access-log.txt |
-| 5. Create + back up your note | touch investigation-notes.txt then cp investigation-notes.txt investigation-notes-backup.txt | New-Item investigation-notes.txt |
+| 1. Where am I? | Pwd | Get-Location |
+| 2. Look around | Ls | Get-ChildItem |
+| 3. Move into a folder | Cd | Set-Location |
+| 4. Peek inside a file | Cat | Get-Content |
+| 5. Create + back up your note | Touch CP | New Item Copy-Item |
 
-**⚠️ Stop and check:** did you use the exact same folder and file for both your bash and PowerShell passes? If they don't match, your comparison table below won't make sense — go back to Part B and re-target the same location before continuing.
+**⚠️ Stop and check:** did both passes use `/home/agent/archive/incident-42` and `access-log.txt`? If not, go back to the matching PowerShell challenge (use **Previous**) and redo it in that folder before continuing.
 
 ### Step C2 — Output Differences Reflection
 
 Describe at least one difference in how the two shells presented information to you (e.g., column layout, text colors, file details, folder headers). Minimum 2 sentences.
 
 ```
-Both shells listed the same three files, but ls printed them as a plain space-separated line with no other information, while Get-ChildItem displayed them in a formatted table with columns like Mode, LastWriteTime, and Length. This meant PowerShell gave me extra metadata about each file automatically, whereas in bash I'd need to add a flag like -l to ls to see similar details.
+When creating and backing up the note and checking afterwards the dir command listed the files differently in powershell than it did with the bash commands.
 ```
 
 ---
@@ -315,10 +316,14 @@ Both shells listed the same three files, but ls printed them as a plain space-se
 
 ### Analysis Question 1 — The Identical Tree
 
-How do you know that the underlying file system tree was identical across both passes, even though you used completely different commands and operating systems? Point to concrete evidence from your terminal outputs (e.g., matching folder names, file content, or sizes). Minimum 3 sentences.
+Both passes used equivalent practice datasets with the same Linux-style layout, even though you typed different commands. How do you know the folders and files matched? Point to concrete evidence from your terminal outputs (e.g., matching paths, folder names, or file content). Minimum 3 sentences.
 
 ```
-I know the underlying file system tree was identical across both passes because the folder path matched exactly: both pwd and Get-Location confirmed /home/agent/archive/incident-42 as the destination after moving. The file names inside that folder were also identical between passes — access-log.txt, and later investigation-notes.txt and investigation-notes-backup.txt — which wouldn't be possible if the two passes were looking at different data. Finally, the actual content of access-log.txt was the same in both cases (the same incident log text about the unknown login attempt), which confirms the commands were just two different interfaces pointed at the same real data, not two separate simulated environments.
+I know the file system tree was identical across both passes because the folder path matched exactly: both pwd and Get-Location confirmed /home/agent/archive/incident-42 as the destination after moving. 
+
+The file names inside that folder were also identical between passes (access-log.txt, and later investigation-notes.txt and investigation-notes-backup.txt) which wouldn't be possible if the two passes were looking at different data. 
+
+Finally, the actual content of access-log.txt was the same in both cases (the same incident log text about the unknown login attempt), which confirms the commands were just two different interfaces pointed at the same real data, not two separate simulated environments.
 ```
 
 ### Analysis Question 2 — Syntax Preferences
@@ -331,10 +336,12 @@ The command pair that felt most different to me was pwd vs. Get-Location / ls vs
 
 ### Analysis Question 3 — Applying Lesson 2 Differences
 
-Describe how a specific difference you learned about in Lesson 2 (such as slash styles, case-sensitivity, or drive letters) was directly visible in your hands-on commands or output during this lab. Minimum 3 sentences.
+In this simulator, both boxes use the same Linux-style paths (like `/home/agent`) — PowerShell also runs on Linux, so you did not see drive letters such as `C:\`. If the simulator accepted a backslash in a path, that is a typing convenience, not a sign of a Windows file system. First, describe what you actually observed that was different between the bash and PowerShell commands or output. Then explain one Windows-vs-Linux difference from Lesson 2 (such as slash styles, case-sensitivity, or drive letters) and what it would look like on a real Windows computer. Minimum 3 sentences.
 
 ```
-One difference from Lesson 2 that showed up directly in this lab was slash style: both my bash and PowerShell outputs used forward slashes, printing the path as /home/agent/archive/incident-42 in both pwd and Get-Location. This is easy to remember because on a real Windows machine, PowerShell paths are usually written with backslashes and start with a drive letter, but this simulated environment kept a Linux-style path structure even on the "Windows pass." That told me the difference between the two shells here was really about command syntax and naming (ls vs. Get-ChildItem, cat vs. Get-Content), not about the underlying path format, since neither a drive letter nor a backslash ever appeared in my output.
+One difference from Lesson 2 that showed up directly in this lab was slash style: both my bash and PowerShell outputs used forward slashes, printing the path as /home/agent/archive/incident-42 in both pwd and Get-Location. This is easy to remember because on a real Windows machine, PowerShell paths are usually written with backslashes and start with a drive letter, but this simulated environment kept a Linux-style path structure even on the "Windows pass." 
+
+That told me the difference between the two shells here was really about command syntax and naming (ls vs. Get-ChildItem, cat vs. Get-Content), not about the underlying path format, since neither a drive letter nor a backslash ever appeared in my output.
 ```
 
 ---
