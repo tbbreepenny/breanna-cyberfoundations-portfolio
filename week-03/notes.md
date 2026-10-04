@@ -1,8 +1,8 @@
 # Week 3 Notes — Windows, Linux, and Your First Commands
 
-**Student Name:** Breanna Pennywell
+**Student Name:** BREANNA PENNYWELL
 
-**Date Completed:** 09/08/2026
+**Date Completed:** 10/04/2026
 
 Summarize this week's key concepts in your own words — not copy-pasted definitions.
 
