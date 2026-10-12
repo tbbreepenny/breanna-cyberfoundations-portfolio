@@ -1,8 +1,8 @@
 # Week 4 Notes — Permissions, Searching, and Virtual Machines
 
-**Student Name:**
+**Student Name:** BREANNA PENNYWELL
 
-**Date Completed:**
+**Date Completed:** 10/11/2026
 
 Summarize this week's key concepts in your own words — not copy-pasted definitions.
 
