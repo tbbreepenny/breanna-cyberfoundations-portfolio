@@ -262,7 +262,7 @@ I chose B2s (2 vCPUs, 4 GB RAM, 64 GB disk, $0.046/hr) because it is the size th
 
 This lab completes **Deliverable 1: VM concepts + CLI screenshots**. Two things get committed:
 
-**1. This worksheet, via the Lab Portal:**
+**1. This worksheet, via the Lab Portal:** Week 4, Lab 03
 
 1. Go to the CyberFoundations Lab Portal and sign in.
 2. Open **Week 4 → Lab 03: Build Your First Virtual Machine**.
