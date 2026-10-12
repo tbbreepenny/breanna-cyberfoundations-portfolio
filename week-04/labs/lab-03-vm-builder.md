@@ -279,6 +279,10 @@ This lab completes **Deliverable 1: VM concepts + CLI screenshots**. Two things 
 
 For each: on GitHub.com, navigate to `assets/screenshots/week-04/`, click **Add file → Upload files**, drag the image in (exact filenames above — lowercase, hyphens, no spaces), and **Commit changes**. Then open each uploaded image, right-click directly on it, choose **Copy image address** (Chrome/Edge) or **Copy Image Link** (Firefox), and paste the two VM links into the embeds below:
 
+![VM configuration summary](https://raw.githubusercontent.com/tbbreepenny/breanna-cyberfoundations-portfolio/refs/heads/main/assets/screenshots/week-04/vm-config-summary.png)
+
+![VM dashboard — running, with snapshot](https://raw.githubusercontent.com/tbbreepenny/breanna-cyberfoundations-portfolio/refs/heads/main/assets/screenshots/week-04/vm-dashboard-running.png)
+
 **If right-click doesn't show that option:** click the small download-arrow icon in the top-right of the image preview instead, then copy the URL from your browser's address bar.
 
 **Commit message tip (from Lesson 4):** when GitHub asks for a commit message on your uploads, write one that says what the work is — *"Add Deliverable 1: VM lifecycle and CLI evidence"* — not "stuff." An employer reading your repo sees discipline in details like that.
