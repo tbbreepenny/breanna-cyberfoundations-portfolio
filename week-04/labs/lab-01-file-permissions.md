@@ -276,7 +276,7 @@ A Windows ACL would be more useful when one specific person outside the usual gr
 
 - [x] Problem file identified with evidence from its permission string (Part A, Step 3)
 
-- [ ] Problem file locked down with before/after `ls -l` checks recorded (Part B, Step 1)
+- [x] Problem file locked down with before/after `ls -l` checks recorded (Part B, Step 1)
 
 - [x] Script made owner-executable and verified (Part B, Step 2)
 
